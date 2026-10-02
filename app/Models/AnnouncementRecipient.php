@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+
+class AnnouncementRecipient extends Model
+{
+    use HasFactory, SoftDeletes;
+    protected $guarded = [];
+    protected $table = "announcementrecipients";
+
+    public function announcement()
+    {
+        return $this->belongsTo(Announcement::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+}

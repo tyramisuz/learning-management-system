@@ -1,0 +1,10 @@
+/* custom.css */
+input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.flex.rounded-md.bg-white\/5.ring-1.ring-inset.ring-white\/10:focus-within {
+    outline: none !important;
+    box-shadow: none !important;
+}
