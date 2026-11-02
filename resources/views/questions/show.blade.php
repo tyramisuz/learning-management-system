@@ -100,17 +100,17 @@
                     <div class="flex items-center justify-center">
                         @if(in_array($extension, ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'svg']))
                             <!-- Display Image -->
-                            <img src="{{ Storage::url($mediaPath) }}" alt="Image" class="flex w-64 py-2 px-2 h-64 rounded-lg items-center justify-center">
+                            <img src="{{ asset(Storage::url($mediaPath)) }}" alt="Image" class="flex w-64 py-2 px-2 h-64 rounded-lg items-center justify-center">
                         @elseif(in_array($extension, ['mp4', 'webm', 'ogg']))
                             <!-- Display Video -->
                             <video controls class="flex w-full h-64 py-2 px-2 items-center justify-center rounded-lg">
-                                <source src="{{ Storage::url($mediaPath) }}" type="video/{{ $extension }}">
+                                <source src="{{ asset(Storage::url($mediaPath)) }}" type="video/{{ $extension }}">
                                 Your browser does not support the video tag.
                             </video>
                         @elseif(in_array($extension, ['mp3', 'wav', 'ogg']))
                             <!-- Display Audio -->
                             <audio controls class="flex w-64 rounded-lg items-center justify-center">
-                                <source src="{{ Storage::url($mediaPath) }}" type="audio/{{ $extension }}">
+                                <source src="{{ asset(Storage::url($mediaPath)) }}" type="audio/{{ $extension }}">
                                 Your browser does not support the audio element.
                             </audio>
                         @endif
@@ -144,7 +144,7 @@
                             <div class="mt-3 relative">
                                 @if (filter_var($answer, FILTER_VALIDATE_URL) || Storage::disk()->exists($answer)) 
                                     <div id="answer-option_{{$i}}" class="flex rounded-lg bg-white ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-green-500 answer-option" id="textarea-{{ $loop->index }}" data-answer="{{ $answer }}" data-tab-id="tab{{ $i }}">
-                                        <img src="{{ Storage::url($answer) }}" alt="Answer Image" style="width: 150px; height: 200px;" class="flex-1 py-2 px-3 relative">
+                                        <img src="{{ asset(Storage::url($answer)) }}" alt="Answer Image" style="width: 150px; height: 200px;" class="flex-1 py-2 px-3 relative">
                                     </div>
                                 @else
                                     <div id="answer-option_{{$i}}" class="flex rounded-lg bg-white ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-green-500 answer-option" id="textarea-{{ $loop->index }}" data-answer="{{ $answer }}" data-tab-id="tab{{ $i }}">

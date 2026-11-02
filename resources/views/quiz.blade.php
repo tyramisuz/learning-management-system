@@ -49,9 +49,9 @@
                         <li class="-mx-6 mt-auto">
                             <a href="#" class="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-black hover:bg-gray-300">
                             @if (Auth::user()->image)
-                            <img class="h-8 w-8 rounded-full bg-indigo-700" src="{{ Storage::url(Auth::user()->image) }}"  /> 
+                            <img class="h-8 w-8 rounded-full bg-indigo-700" src="{{ asset(Storage::url(Auth::user()->image)) }}" />
                             @else
-                            <img class="h-8 w-8 rounded-full bg-indigo-700" src="/images/default.jpeg" alt="">
+                            <img class="h-8 w-8 rounded-full bg-indigo-700" src="{{ asset('images/default.jpeg') }}" alt="">
                             @endif
                               <span class="sr-only">Your profile</span>
                               <span aria-hidden="true">{{Auth::user()->name}}</span>

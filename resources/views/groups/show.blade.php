@@ -113,7 +113,7 @@
                     <div class="px-4 sm:px-0 sm:flex-0">
                         <div class="text-gray-900 min-h-screen bg-opacity-50 p-4 rounded-lg bg-gray-400">
                             <div class="flex gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
                                     <path d="M13.5 4.06c0-1.336-1.616-2.005-2.56-1.06l-4.5 4.5H4.508c-1.141 0-2.318.664-2.66 1.905A9.76 9.76 0 0 0 1.5 12c0 .898.121 1.768.35 2.595.341 1.24 1.518 1.905 2.659 1.905h1.93l4.5 4.5c.945.945 2.561.276 2.561-1.06V4.06ZM18.584 5.106a.75.75 0 0 1 1.06 0c3.808 3.807 3.808 9.98 0 13.788a.75.75 0 0 1-1.06-1.06 8.25 8.25 0 0 0 0-11.668.75.75 0 0 1 0-1.06Z" />
                                     <path d="M15.932 7.757a.75.75 0 0 1 1.061 0 6 6 0 0 1 0 8.486.75.75 0 0 1-1.06-1.061 4.5 4.5 0 0 0 0-6.364.75.75 0 0 1 0-1.06Z" />
                                 </svg>
@@ -128,9 +128,9 @@
                                             <div class="flex">
                                                 @if($announcement->created_by == $owner->id || $announcement->title == $owner->name)
                                                     @if($owner->image)
-                                                        <img class="h-8 w-8 mr-2 rounded-full" src="{{ Storage::url($owner->image) }}" alt="Sender Image">
+                                                        <img class="h-8 w-8 mr-2 rounded-full" src="{{ asset(Storage::url($owner->image)) }}" alt="Sender Image">
                                                     @else
-                                                        <img class="h-8 w-8 mr-2 rounded-full" src="/images/default.jpeg" alt="profile">
+                                                        <img class="h-8 w-8 mr-2 rounded-full" src="{{ asset('images/default.jpeg') }}" alt="profile">
                                                     @endif
                                                 @else
                                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="mr-2 h-10 w-10">
@@ -316,7 +316,7 @@
                                 console.log('ade');
                                 image = '<img class="h-8 w-8 mr-2 rounded-full" src="' + ownerImage + '" alt="Sender Image">';
                             } else {
-                                image = '<img class="h-8 w-8 mr-2 rounded-full" src="/images/default.jpeg" alt="profile">';
+                                image = '<img class="h-8 w-8 mr-2 rounded-full" src="{{ asset('images/default.jpeg') }}" alt="profile">';
                                 console.log('takde');
                             }
                         } else {
